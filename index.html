@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Less-5</title>
+</head>
+<body>
+	<script>
+		var area = '';
+		var newstring = '\n';
+		
+		var createChristmasTree = function (treeHight, whichSymbol) {
+			
+			for (var i = 1 ; i <= treeHight; i++) {
+				var space = ' '.repeat(treeHight - i);
+		    	area += space + whichSymbol.repeat(i + i - 1) + newstring; 
+			}
+			if (whichSymbol.length === 1) {
+
+			} else if (whichSymbol.length > 1) {
+				return 'write one symbol, please';
+		}
+
+			return area;
+		}
+
+		var result = createChristmasTree('5', '*');
+		console.log(result);
+
+		// second part of homework
+
+		function f (a, b, c) {
+			a = a !== undefined ? a : 2; 
+			b = b !== undefined ? b : 3;
+			
+			if (typeof c === 'function') {
+				return c();
+			}
+			return sum (a, b);
+
+			function sum (a, b) {
+
+				return a + b;
+			}
+
+		}
+		
+		function thirdArgument () {
+			return 'hey, i am a function';
+		}
+
+		var secondResult = f(5, 8, thirdArgument);
+
+		console.log(secondResult);
+
+	</script>
+</body>
+</html>
